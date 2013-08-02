@@ -1,0 +1,25 @@
+* gambit hello
+some hello world style experiments with the Gambit scheme implementation.
+http://gambitscheme.org/wiki/index.php/Main_Page
+
+Of interest might be some mingw cross-compilation examples.
+
+They were tried on a Fedora 19 host.
+
+You need to cross compile gambit.
+./configure --host=i686-w64-mingw32 --enable-single-host
+make -j6 #depending on your cores
+sudo make install #/usr/local by default
+
+** m3
+from the gambit docs. shows how to interface with C
+make m3
+./m3
+** m3-mingw
+an attempt att cross compilation using mingw.
+
+
+** hello
+make hello
+./hello
+print a string and start a REPL
