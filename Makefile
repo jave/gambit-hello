@@ -1,9 +1,13 @@
+clean:
+	rm *.o *_.c
+
 hello:
 	gsc -exe hello.scm
 #m3 example from the gambit texinfo docs
 hello-mingw:
 	/usr/local/Gambit-C/bin/gsc.exe -c hello.scm
-	i686-w64-mingw32-gcc -I  /usr/local/Gambit-C/include/ -L/usr/local/Gambit-C/lib hello.c  -lgambc -lws2_32 -lwsock32  -o hello-mingw
+	/usr/local/Gambit-C/bin/gsc.exe -link hello.c
+	i686-w64-mingw32-gcc -I  /usr/local/Gambit-C/include/ -L/usr/local/Gambit-C/lib hello.c hello_.c  -lgambc -lws2_32 -lwsock32  -o hello-mingw
 
 m3:
 	gsc -c m2.scm        # create m2.c (note: .scm is optional)
