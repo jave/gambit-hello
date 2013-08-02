@@ -2,7 +2,8 @@ hello:
 	gsc -exe hello.scm
 #m3 example from the gambit texinfo docs
 hello-mingw:
-	/home/joakim/build_pristine/gambit/gsc/gsc.exe -exe hello.scm
+	/usr/local/Gambit-C/bin/gsc.exe -c hello.scm
+	i686-w64-mingw32-gcc -I  /usr/local/Gambit-C/include/ -L/usr/local/Gambit-C/lib hello.c  -lgambc -lws2_32 -lwsock32  -o hello-mingw
 
 m3:
 	gsc -c m2.scm        # create m2.c (note: .scm is optional)
