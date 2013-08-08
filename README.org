@@ -4,22 +4,39 @@ http://gambitscheme.org/wiki/index.php/Main_Page
 
 Of interest might be some mingw cross-compilation examples.
 
+** Mingw
 They were tried on a Fedora 19 host.
 
 You need to cross compile gambit.
-./configure --host=i686-w64-mingw32 --enable-single-host
-make -j6 #depending on your cores
-sudo make install #/usr/local by default
 
-** m3
-from the gambit docs. shows how to interface with C
-make m3
-./m3
-** m3-mingw
-an attempt att cross compilation using mingw.
+#+BEGIN_SRC sh
+  ./configure --host=i686-w64-mingw32 --enable-single-host
+  make -j6 #depending on your cores
+  sudo make install #/usr/local by default
+#+END_SRC
 
+each example has a mingw variant. So, for example:
+- make hello, makes the hello example
+- make hello-mingw makes an mingw variant of the example
+
+when you run the resulting mingw binary in an xterm, a wineconsole is opened temporarily,
+unclear why. The small tst-mingw prog does not do this.
 
 ** hello
 make hello
 ./hello
 print a string and start a REPL
+
+** m3
+from the gambit docs. shows how to interface with C
+make m3
+./m3
+
+
+
+** web-repl
+This is code from the gambit examples.
+make web-repl
+nc 127.0.0.1 7000
+
+
