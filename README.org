@@ -23,20 +23,24 @@ when you run the resulting mingw binary in an xterm, a wineconsole is opened tem
 unclear why. The small tst-mingw prog does not do this.
 
 ** hello
-make hello
+#+BEGIN_SRC sh
+ make hello
 ./hello
+#+END_SRC
 print a string and start a REPL
 
 ** m3
 from the gambit docs. shows how to interface with C
+
+#+BEGIN_SRC sh
 make m3
 ./m3
-
+#+END_SRC
 
 
 ** web-repl
-This is code from the gambit examples.
+web-repl is from the gambit dist, the only added value here is a mingw cross compile recipy.
+#+BEGIN_SRC sh
 make web-repl
 nc 127.0.0.1 7000
-
-
+#+END_SRC
